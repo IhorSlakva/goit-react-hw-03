@@ -1,0 +1,21 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 375px;
+  min-height: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 20px 0px;
+  padding: 5px 10px;
+}
+
+.label {
+  font-size: 20px;
+}
+
+.input {
+  width: 340px;
+  height: 25px;
+}
