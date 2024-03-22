@@ -44,7 +44,7 @@ const ContactForm = ({ onAddContact }) => {
           name="username"
           id={userNameId}
         ></Field>
-        <ErrorMessage component="span" name="username" />
+        <ErrorMessage className={css.error} component="span" name="username" />
         <label className={css.label} htmlFor={userNumberId}>
           Number
         </label>
@@ -54,8 +54,14 @@ const ContactForm = ({ onAddContact }) => {
           name="usernumber"
           id={userNumberId}
         ></Field>
-        <ErrorMessage component="span" name="usernumber" />
-        <button type="submit">Add contact</button>
+        <ErrorMessage
+          className={css.error}
+          component="span"
+          name="usernumber"
+        />
+        <button className={css.btn} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );
