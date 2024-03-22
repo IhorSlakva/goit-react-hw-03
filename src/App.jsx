@@ -1,0 +1,17 @@
+import contactsTest from "./contactsTest.json";
+import ContactList from "./components/ContactList/ContactList";
+import ContactForm from "./components/ContactForm/ContactForm";
+import SearchBox from "./components/SearchBox/SearchBox";
+
+function App() {
+  return (
+    <>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <SearchBox />
+      <ContactList contacts={contactsTest} />
+    </>
+  );
+}
+
+export default App;
