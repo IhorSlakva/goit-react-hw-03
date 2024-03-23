@@ -4,24 +4,24 @@ import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
 const ContactFormSchema = Yup.object().shape({
-  username: Yup.string()
+  name: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  usernumber: Yup.string()
+  number: Yup.string()
     .min(3, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
 });
 
 const initialValues = {
-  username: "",
-  usernumber: "",
+  name: "",
+  number: "",
 };
 
 const ContactForm = ({ onAddContact }) => {
-  const userNameId = useId();
-  const userNumberId = useId();
+  const nameId = useId();
+  const numberId = useId();
 
   const handleSubmit = (values, actions) => {
     onAddContact(values);
@@ -35,30 +35,26 @@ const ContactForm = ({ onAddContact }) => {
       validationSchema={ContactFormSchema}
     >
       <Form className={css.form}>
-        <label className={css.label} htmlFor={userNameId}>
+        <label className={css.label} htmlFor={nameId}>
           Name
         </label>
         <Field
           className={css.input}
           type="text"
-          name="username"
-          id={userNameId}
+          name="name"
+          id={nameId}
         ></Field>
-        <ErrorMessage className={css.error} component="span" name="username" />
-        <label className={css.label} htmlFor={userNumberId}>
+        <ErrorMessage className={css.error} component="span" name="name" />
+        <label className={css.label} htmlFor={numberId}>
           Number
         </label>
         <Field
           className={css.input}
           type="text"
-          name="usernumber"
-          id={userNumberId}
+          name="number"
+          id={numberId}
         ></Field>
-        <ErrorMessage
-          className={css.error}
-          component="span"
-          name="usernumber"
-        />
+        <ErrorMessage className={css.error} component="span" name="number" />
         <button className={css.btn} type="submit">
           Add contact
         </button>
